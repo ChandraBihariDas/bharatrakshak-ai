@@ -35,7 +35,10 @@ const features = [
 
 export function CoreFeatures() {
   return (
-    <section className="border-b border-white/10 bg-[#05070a] px-4 py-20 sm:px-6 lg:px-8">
+    <section
+      id="features"
+      className="border-b border-white/10 bg-[#05070a] px-4 py-20 sm:px-6 lg:px-8"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
           <div className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-300">

@@ -37,7 +37,10 @@ const workflow = [
 
 export function ResponseWorkflow() {
   return (
-    <section className="border-b border-white/10 bg-[#070a0f] px-4 py-20 sm:px-6 lg:px-8">
+      <section
+        id="workflow"
+        className="border-b border-white/10 bg-[#070a0f] px-4 py-20 sm:px-6 lg:px-8"
+      >
       <div className="mx-auto max-w-7xl">
         <div className="mb-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
           <div>
