@@ -1,4 +1,5 @@
 // components/landing/hero-section.tsx
+import Link from "next/link";
 import {
   Activity,
   AlertTriangle,
@@ -42,9 +43,14 @@ export function HeroSection() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button className="h-12 rounded-none bg-cyan-300 px-6 font-semibold text-slate-950 hover:bg-cyan-200">
-              Open Command Console
-              <ArrowRight className="ml-2 h-4 w-4" />
+            <Button
+              asChild
+              className="h-12 rounded-none bg-cyan-300 px-6 font-semibold text-slate-950 hover:bg-cyan-200"
+            >
+              <Link href="/dashboard">
+                Dashboard Preview
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
             <Button
               variant="outline"

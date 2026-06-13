@@ -1,12 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Shield, ChevronDown } from "lucide-react";
 
@@ -30,38 +25,15 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="outline"
-                className="border-white/10 bg-white/5"
-              >
-                Login
-                <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-
-            <DropdownMenuContent align="end">
-              <DropdownMenuItem asChild>
-                <Link href="/login?role=citizen">
-                  Citizen Portal
-                </Link>
-              </DropdownMenuItem>
-
-              <DropdownMenuItem asChild>
-                <Link href="/login?role=responder">
-                  Responder Portal
-                </Link>
-              </DropdownMenuItem>
-
-              <DropdownMenuItem asChild>
-                <Link href="/login?role=authority">
-                  Authority Dashboard
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
+          <Link href="/role-select">
+            <Button
+              variant="outline"
+              className="border-white/10 bg-white/5"
+            >
+              Login
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
           <Button className="bg-cyan-300 text-black hover:bg-cyan-200">
             Get Started
           </Button>

@@ -1,12 +1,11 @@
 import { Navbar } from "@/components/layout/navbar";
-import { DemoVideoSection } from "@/components/landing/demo-video-section";
-import { InteractiveArchitecture } from "@/components/landing/interactive-architecture";
 import { HeroSection } from "@/components/landing/hero-section";
 import { RoleSelection } from "@/components/landing/role-selection";
 import { DisasterMapPreview } from "@/components/landing/disaster-map-preview";
 import { CoreFeatures } from "@/components/landing/core-features";
 import { ResponseWorkflow } from "@/components/landing/response-workflow";
-import { TechnicalArchitecture } from "@/components/landing/technical-architecture";
+import { DemoVideoSection } from "@/components/landing/demo-video-section";
+import { InteractiveArchitecture } from "@/components/landing/interactive-architecture";
 import { CommandCta } from "@/components/landing/command-cta";
 
 export default function Home() {
@@ -18,8 +17,7 @@ export default function Home() {
         <HeroSection />
 
         <RoleSelection />
-        <InteractiveArchitecture />
-        <TechnicalArchitecture />
+
         <DisasterMapPreview />
 
         <CoreFeatures />
@@ -27,6 +25,8 @@ export default function Home() {
         <ResponseWorkflow />
 
         <DemoVideoSection />
+
+        <InteractiveArchitecture />
 
         <CommandCta />
       </main>
