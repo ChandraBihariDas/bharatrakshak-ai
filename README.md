@@ -1,255 +1,194 @@
+```markdown
 # 🇮🇳 BharatRakshak AI
 
-> Predict. Alert. Rescue.
+**Predict. Alert. Rescue.**
 
-An AI-powered disaster early warning, emergency response, and rescue coordination platform designed for India.
-
-BharatRakshak AI helps citizens, rescue teams, and government authorities prepare for, respond to, and recover from disasters such as floods, cyclones, landslides, heatwaves, and earthquakes through real-time monitoring, intelligent alerts, and AI-assisted decision-making.
+**AI-Powered Disaster Intelligence & Emergency Response Platform for India**
 
 ---
 
-## 🚀 Vision
+## 🌍 The Problem
 
-India faces recurring natural disasters that affect millions of people every year.
+India faces thousands of natural disasters every year — **floods, cyclones, landslides, heatwaves, earthquakes**, and extreme weather events. These disasters often lead to:
 
-BharatRakshak AI aims to provide a unified disaster management platform that can:
+- Loss of life
+- Massive infrastructure damage
+- Delayed rescue operations
+- Communication breakdowns
+- Poor situational awareness
 
-- Predict disaster risks before they escalate
-- Alert vulnerable communities in real time
-- Coordinate rescue operations efficiently
-- Assist authorities with actionable intelligence
-- Improve situational awareness during emergencies
+Current systems are **fragmented and reactive**. BharatRakshak AI aims to change that — transforming disaster management from **reactive** to **predictive and proactive**.
+
+---
+
+## 🚀 Our Vision
+
+To build **India’s most intelligent, unified disaster management ecosystem** using Artificial Intelligence, real-time data, and geospatial intelligence.
+
+### Who We Serve
+
+- **👨‍👩‍👧 Citizens** — Real-time alerts, SOS help, and life-saving resources
+- **🚑 Rescue Teams** — Faster coordination, resource allocation, and mission execution
+- **🏛 Government Authorities** — National oversight, data-driven decisions, and strategic command
 
 ---
 
-## ✨ Core Features
+## ✨ Key Features
 
-### 🌊 Disaster Risk Prediction
-Predict potential disaster events using environmental and historical data.
-
-- Flood Risk Prediction
-- Cyclone Monitoring
-- Heatwave Detection
-- Landslide Risk Assessment
-
----
+### 🧠 AI Disaster Prediction Engine
+- Flood risk prediction (rainfall + river monitoring)
+- Cyclone path forecasting and impact assessment
+- Heatwave detection and health risk alerts
+- Landslide vulnerability mapping
 
 ### 🚨 Emergency SOS System
+- One-tap SOS with live GPS sharing
+- Automatic emergency categorization
+- Real-time tracking by responders
+- Direct connection to Police, Fire, Ambulance, NDRF & SDRF
 
-Citizens can quickly submit emergency requests.
-
-Features:
-
-- GPS-enabled SOS reporting
-- Priority-based rescue queue
-- Emergency contact support
-- Real-time request tracking
-
----
-
-### 🛰️ Damage Detection
-
-AI-assisted image analysis for disaster assessment.
-
-Capabilities:
-
+### 🛰 AI Damage Assessment
+Powered by **YOLOv8 + Computer Vision**:
 - Building damage detection
-- Infrastructure assessment
+- Road blockage identification
 - Severity classification
-- Rapid response recommendations
+- Recovery prioritization
+
+### 🗺 Live Disaster Intelligence Map
+Interactive map showing:
+- Active incidents & hotspots
+- Rescue team locations
+- Shelters & critical infrastructure
+- Emergency evacuation routes
+
+### 🏛 National Disaster Command Center
+Mission-control dashboard for authorities with:
+- National risk monitoring
+- Resource allocation
+- Multi-state coordination
+- Emergency broadcasting
+
+### 👨‍👩‍👧 Citizen Survival Assistant
+- Localized alerts in regional languages
+- Smart shelter recommendations
+- Safety instructions & emergency contacts
+
+### 🌐 Multilingual Support
+**English, Hindi, Bengali, Marathi, Tamil, Telugu, Kannada, Gujarati, Punjabi, Malayalam** + more
 
 ---
 
-### 🗺️ Disaster Command Dashboard
+## 🏗 System Architecture
 
-A unified operational dashboard for authorities and rescue teams.
-
-Features:
-
-- Live disaster map
-- Active alerts
-- Resource monitoring
-- Rescue coordination
-- Incident tracking
-
----
-
-### 🌐 Multilingual Alert System
-
-Generate alerts in multiple Indian languages.
-
-Supports:
-
-- Hindi
-- English
-- Bengali
-- Tamil
-- Telugu
-- Marathi
-- Kannada
-- More languages coming soon
-
----
-
-## 🏗️ System Architecture
-
-```text
-Frontend (Next.js)
-        │
-        ▼
-Backend API (Express.js)
-        │
-        ▼
-AI Services (FastAPI)
-        │
- ┌──────┴──────┐
- ▼             ▼
-YOLOv8      XGBoost
-Damage      Prediction
-Detection   Models
-        │
-        ▼
-MongoDB Atlas
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-- Next.js 15
-- TypeScript
-- Tailwind CSS v4
-- shadcn/ui
-- Lucide Icons
-
-### Backend
-
-- Express.js
-- Node.js
-- JWT Authentication
-
-### AI Services
-
-- FastAPI
-- Python
-- YOLOv8
-- XGBoost
-- Scikit-learn
-
-### Database
-
-- MongoDB Atlas
-
-### Deployment
-
-- Vercel (Frontend)
-- Render / Railway (Backend)
-- FastAPI AI Service
-- MongoDB Atlas
-
----
-
-## 📂 Project Structure
-
-```text
-bharatrakshak-ai/
-│
-├── frontend/
-│   ├── app/
-│   ├── components/
-│   ├── lib/
-│   └── public/
-│
-├── backend/
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   └── middleware/
-│
-├── ai-service/
-│   ├── models/
-│   ├── routes/
-│   └── app.py
-│
-└── docs/
+```mermaid
+flowchart TD
+    A[Citizens] --> B[Next.js Frontend]
+    B --> C[Express.js Backend]
+    C --> D[FastAPI AI Service]
+    C --> E[MongoDB Atlas]
+    D --> F[YOLOv8 + XGBoost Models]
 ```
 
 ---
 
 ## 👥 User Roles
 
-### Citizen
-
-- Receive alerts
-- Submit SOS requests
-- Track emergency reports
-
-### Responder
-
-- Manage rescue missions
-- View assigned incidents
-- Update field operations
-
-### Authority
-
-- Monitor disasters
-- Issue alerts
-- Allocate resources
-- Coordinate emergency response
+| Role          | Access Highlights |
+|---------------|-------------------|
+| **Citizen**   | Alerts, SOS, Shelter Finder, Survival Assistant |
+| **Responder** | Mission assignment, Tactical maps, Team coordination |
+| **Authority** | National command center, Resource allocation, AI predictions |
 
 ---
 
-## 🎯 Current Progress
+## 🛠 Technology Stack
 
-```text
-Frontend Setup         ██████████ 100%
-Landing Page           ████████░░ 80%
-Dashboard UI           ░░░░░░░░░░ 0%
-SOS Module             ░░░░░░░░░░ 0%
-Prediction Module      ░░░░░░░░░░ 0%
-Damage Detection UI    ░░░░░░░░░░ 0%
-Backend                ░░░░░░░░░░ 0%
-FastAPI                ░░░░░░░░░░ 0%
-AI Models              ░░░░░░░░░░ 0%
+**Frontend**: Next.js 15 (TypeScript), Tailwind CSS v4, shadcn/ui, Lucide Icons  
+**Backend**: Node.js + Express.js, JWT Auth, REST APIs  
+**AI Services**: Python + FastAPI, YOLOv8, XGBoost, Scikit-Learn  
+**Database**: MongoDB Atlas  
+**Deployment**: Vercel (Frontend), Railway/Render (Backend), FastAPI Server
+
+---
+
+## 📂 Project Structure
+
+```bash
+bharatrakshak-ai/
+├── frontend/          # Next.js 15 Application
+├── backend/           # Express.js API Server
+├── ai-service/        # Python FastAPI + ML Models
+├── docs/              # Documentation
+└── README.md
 ```
 
 ---
 
-## 🎬 Planned Modules
+## 📈 Development Progress
 
-- [ ] Disaster Prediction Engine
-- [ ] SOS Management System
-- [ ] Damage Detection AI
-- [ ] Rescue Coordination Dashboard
-- [ ] Role-Based Authentication
-- [ ] Live India Disaster Map
-- [ ] Multilingual Alerts
-- [ ] Resource Allocation Engine
+**Frontend**
+- Infrastructure & Setup: **100%**
+- Landing & Role Selection: **90%**
+- Authentication Flow: **70%**
+- Citizen Portal: **80%**
+- Responder Portal: **80%**
+- Authority Portal: **80%**
+
+**Backend & AI**
+- API Development: **In Progress**
+- AI Models & Integration: **Planned**
+- Database & Deployment: **Planned**
 
 ---
 
-## 🏆 Hackathon Goal
+## 🛣 Roadmap
 
-Build a scalable disaster intelligence platform capable of assisting:
+### Phase 1 — User Experience
+- Complete all portals and authentication
 
-- Citizens
-- Emergency Responders
-- Government Authorities
+### Phase 2 — Backend Core
+- User management, SOS, and incident APIs
 
-during disaster preparedness, response, and recovery operations.
+### Phase 3 — AI Intelligence
+- Prediction models, damage assessment, live intelligence
+
+### Phase 4 — Production
+- Cloud deployment, monitoring, security hardening
+
+---
+
+## 🏆 Samsung Hackathon 2026
+
+**Goal**: Build a complete, production-ready AI platform supporting the entire disaster lifecycle:
+
+**Predict → Alert → Respond → Rescue → Recover**
+
+---
+
+## 🤝 Contributors
+
+**Founder & Lead Developer**  
+**Chandra Bihari Das**  
+B.Tech CSE, LNCT Bhopal  
+[GitHub](https://github.com/ChandraBihariDas)
 
 ---
 
 ## 📜 License
 
-MIT License
+This project is licensed under the **MIT License**.
 
 ---
 
-## ❤️ Built For India
+**🇮🇳 Built with love for a safer, more resilient India.**
 
-**BharatRakshak AI**  
-*Predict. Alert. Rescue.*
+⭐ **Star this repository** if you believe in using technology to save lives.
+
+---
+
+*Made with ❤️ for Bharat*
+```
+
+---
+
+**Copy everything above** (from the first `#` to the last line) and paste it directly into your `README.md` file.
