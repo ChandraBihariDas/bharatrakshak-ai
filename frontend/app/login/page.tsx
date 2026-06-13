@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
@@ -614,46 +614,25 @@ const SuccessScreen = ({ role, config }: { role: Role; config: RoleConfig }) => 
   </div>
 );
 
-// ─── Role Selector Tab ────────────────────────────────────────────────────────
-
-const RoleTab = ({
-  role, active, config, onClick,
-}: { role: Role; active: boolean; config: RoleConfig; onClick: () => void }) => (
-  <button
-    onClick={onClick}
-    style={{
-      flex: 1, padding: "10px 4px", border: "none",
-      borderBottom: `2px solid ${active ? config.accent : "transparent"}`,
-      background: "transparent", cursor: "pointer",
-      color: active ? "#fff" : "rgba(255,255,255,0.35)",
-      fontSize: 11, fontWeight: 700, letterSpacing: "0.1em",
-      textTransform: "uppercase", fontFamily: "'JetBrains Mono', monospace",
-      transition: "all 0.2s",
-    }}
-  >
-    {config.label}
-  </button>
-);
-
 // ─── Main Login Page ──────────────────────────────────────────────────────────
 
 function LoginPageInner() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const rawRole = searchParams.get("role") as Role | null;
-  const defaultRole: Role = rawRole && ROLE_CONFIGS[rawRole] ? rawRole : "citizen";
-
-  const [activeRole, setActiveRole] = useState<Role>(defaultRole);
-  const [success, setSuccess] = useState(false);
+  const activeRole: Role = rawRole && ROLE_CONFIGS[rawRole] ? rawRole : "citizen";
   const config = ROLE_CONFIGS[activeRole];
 
-  useEffect(() => {
-    // Update URL without navigation when tab changes
-    const url = new URL(window.location.href);
-    url.searchParams.set("role", activeRole);
-    window.history.replaceState(null, "", url.toString());
-  }, [activeRole]);
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = () => setSuccess(true);
+  const handleSubmit = () => {
+    setSuccess(true);
+    setTimeout(() => {
+      if (activeRole === "citizen") router.push("/portal/citizen");
+      if (activeRole === "responder") router.push("/portal/responder");
+      if (activeRole === "authority") router.push("/portal/admin");
+    }, 2000);
+  };
 
   return (
     <>
@@ -717,16 +696,16 @@ function LoginPageInner() {
       }}>
 
         {/* Left Panel — Branding */}
-        <div style={{
-          display: "none",
-          flex: "0 0 420px",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          padding: "48px 40px",
-          borderRight: "1px solid rgba(255,255,255,0.06)",
-          background: "rgba(255,255,255,0.015)",
-          // Show on medium+ screens via inline media — we'll handle with a wrapper trick
-        }}
+        <div
+          style={{
+            display: "none",
+            flex: "0 0 420px",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            padding: "48px 40px",
+            borderRight: "1px solid rgba(255,255,255,0.06)",
+            background: "rgba(255,255,255,0.015)",
+          }}
           className="left-panel"
         >
           {/* Logo */}
@@ -880,28 +859,12 @@ function LoginPageInner() {
             }}>
               <CornerBrackets color={config.accent} />
 
-              {/* Role tabs */}
-              <div style={{
-                display: "flex",
-                borderBottom: "1px solid rgba(255,255,255,0.07)",
-              }}>
-                {(Object.keys(ROLE_CONFIGS) as Role[]).map(r => (
-                  <RoleTab
-                    key={r}
-                    role={r}
-                    active={activeRole === r}
-                    config={ROLE_CONFIGS[r]}
-                    onClick={() => { setActiveRole(r); setSuccess(false); }}
-                  />
-                ))}
-              </div>
-
               {/* Form body */}
               <div style={{ padding: "28px 28px 32px" }}>
                 {success ? (
                   <SuccessScreen role={activeRole} config={config} />
                 ) : (
-                  <div key={activeRole} style={{ animation: "fadeSlideUp 0.3s ease both" }}>
+                  <div style={{ animation: "fadeSlideUp 0.3s ease both" }}>
                     {/* Header */}
                     <div style={{ marginBottom: 28 }}>
                       <div style={{
