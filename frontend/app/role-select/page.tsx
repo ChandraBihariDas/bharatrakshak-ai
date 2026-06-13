@@ -65,7 +65,7 @@ const ROLES = [
   },
   {
     id: "admin",
-    path: "/login?role=admin",
+    path: "/login?role=authority",
     label: "Authority",
     sublabel: "Command Level",
     icon: Shield,

@@ -136,8 +136,8 @@ export default function SOSPage() {
   }, []);
 
   const now = new Date();
-  const timeStr = now.toLocaleTimeString("en-IN", { hour12: false });
-  const dateStr = now.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" });
+  const timeStr = mounted ? now.toLocaleTimeString("en-IN", { hour12: false }) : "--:--:--";
+  const dateStr = mounted ? now.toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "";
 
   // GPS
   const acquireLocation = useCallback(() => {

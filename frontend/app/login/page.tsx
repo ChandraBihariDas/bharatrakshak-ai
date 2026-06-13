@@ -2,6 +2,8 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/dist/client/link";
+import { Button } from "@/components/ui/button";
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -359,7 +361,8 @@ const CitizenLogin = ({ accent, onSubmit }: { accent: string; onSubmit: () => vo
             For immediate distress situations — no account required
           </p>
         </div>
-        <button style={{
+        <Link href="/sos" style={{ marginLeft: "auto" }}>
+            <button style={{
           marginLeft: "auto", background: "#FF4D6A", border: "none",
           color: "#fff", fontSize: 11, fontWeight: 700, padding: "6px 12px",
           borderRadius: 4, cursor: "pointer", whiteSpace: "nowrap",
@@ -367,6 +370,8 @@ const CitizenLogin = ({ accent, onSubmit }: { accent: string; onSubmit: () => vo
         }}>
           SOS
         </button>
+        </Link>
+        
       </div>
     </div>
   );
