@@ -52,6 +52,10 @@ export function Navbar() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <Link href="/signup">
+          <Button className="bg-white text-black hover:bg-cyan-200">
+            Sign Up
+          </Button></Link>
           <Link href="/role-select">
           <Button className="bg-cyan-300 text-black hover:bg-cyan-200">
             Get Started

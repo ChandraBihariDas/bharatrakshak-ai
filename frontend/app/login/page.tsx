@@ -571,6 +571,44 @@ const CitizenLogin = ({ accent, onFirebaseSuccess }: {
           </button>
         </Link>
       </div>
+
+      {/* ── Sign Up prompt ── */}
+      <div style={{
+        display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+        padding: "14px 0 2px",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+      }}>
+        <span style={{
+          fontSize: 12, color: "rgba(255,255,255,0.35)",
+          fontFamily: "'JetBrains Mono', monospace",
+        }}>
+          Don&apos;t have an account?
+        </span>
+        <Link href="/signup" style={{ textDecoration: "none" }}>
+          <button style={{
+            background: "rgba(0,255,128,0.08)",
+            border: "1px solid rgba(0,255,128,0.35)",
+            color: "#00FF80",
+            fontSize: 12, fontWeight: 700,
+            padding: "6px 16px", borderRadius: 5,
+            cursor: "pointer",
+            fontFamily: "'JetBrains Mono', monospace",
+            letterSpacing: "0.06em",
+            transition: "background 0.2s, box-shadow 0.2s",
+          }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,255,128,0.16)";
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 0 12px rgba(0,255,128,0.3)";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLButtonElement).style.background = "rgba(0,255,128,0.08)";
+              (e.currentTarget as HTMLButtonElement).style.boxShadow = "none";
+            }}
+          >
+            Sign Up
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };
