@@ -18,3 +18,11 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Environment files
+.env
+.env.local
+
+# Node
+node_modules/
+dist/
