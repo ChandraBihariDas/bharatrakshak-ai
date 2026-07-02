@@ -9,7 +9,7 @@ import {
 const roles = [
   {
     title: "Citizen",
-    href: "/portal/citizen",
+    href: "/login?role=citizen",
     icon: Users,
     items: [
       "Report emergencies",
@@ -19,7 +19,7 @@ const roles = [
   },
   {
     title: "Responder",
-    href: "/portal/responder",
+    href: "/login?role=responder",
     icon: ShieldCheck,
     items: [
       "View SOS requests",
@@ -29,7 +29,7 @@ const roles = [
   },
   {
     title: "Authority",
-    href: "/portal/admin",
+    href: "/login?role=authority",
     icon: Building2,
     items: [
       "Monitor disasters",

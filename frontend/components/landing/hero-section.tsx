@@ -48,7 +48,7 @@ export function HeroSection() {
               className="h-12 rounded-none bg-cyan-300 px-6 font-semibold text-slate-950 hover:bg-cyan-200"
             >
               <Link href="/dashboard">
-                Dashboard Preview
+                National Command Center
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
